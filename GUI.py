@@ -17,7 +17,7 @@ class GUI:
         check.pack(padx=10, pady=10)
 
         button = tk.Button(self.root, text="Click Me", command=self.show_message)
-        button.pack(padx=69, pady=10)
+        button.pack(padx=79, pady=10)
 
         self.root.mainloop()
     
