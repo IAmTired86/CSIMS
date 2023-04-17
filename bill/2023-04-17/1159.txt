@@ -1,0 +1,13 @@
+			Clothes Store Company
+			Address: Ba Dinh, Ha Noi
+			Phone: 0123456789
+				Invoice
+			2023-04-17
+
+	--------------------------------------------------------
+	No.	Products	Color	Size	Qty	Price
+	--------------------------------------------------------
+	1	Shirt		Red	L	1	100
+
+			Total: $100
+			Thank you for shopping with us!

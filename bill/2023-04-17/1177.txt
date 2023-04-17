@@ -1,0 +1,13 @@
+			Clothes Store Company
+			Address: Ba Dinh, Ha Noi
+			Phone: 0123456789
+				Invoice
+			2023-04-17
+
+	--------------------------------------------------------
+	No.	Products	Color	Size	Qty	Price
+	--------------------------------------------------------
+	1	Pants		Red	L	1	150
+
+			Total: $250
+			Thank you for shopping with us!
