@@ -129,15 +129,20 @@ def selected_item(event):
 def remove_cart():
     global selected_item
     selected_item = cart_list.curselection()
-    for selected_checkbox in selected_item[::-1]:
-        cart_list.delete(selected_checkbox)
-    for i in range (0, len(selected_item)):
-        product_id.pop(selected_item[i])
-        product_price.pop(selected_item[i])
-        product_name.pop(selected_item[i])
-        product_color.pop(selected_item[i])
-        product_size.pop(selected_item[i]) 
-        product_quantity.pop(selected_item[i])
+    if len(selected_item) == 0:
+        messagebox.showerror('No item selected', 'Please select an item to remove')
+    elif len(selected_item) > 1:
+        messagebox.showerror('Too many items selected', 'Please select only one item to remove')
+    else:
+        for selected_checkbox in selected_item[::-1]:
+            cart_list.delete(selected_checkbox)
+        for i in range (0, len(selected_item)):
+            product_id.pop(selected_item[i])
+            product_price.pop(selected_item[i])
+            product_name.pop(selected_item[i])
+            product_color.pop(selected_item[i])
+            product_size.pop(selected_item[i]) 
+            product_quantity.pop(selected_item[i])
     total = sum(product_price)
     total_price_text.config(state=NORMAL)
     total_price_text.delete("1.0","end")
@@ -334,7 +339,7 @@ color.place(x = 200, y = 455)
 color.current(0)
 
 
-#Button
+#Go back Button
 logout_btn = tk.Button(window, text = "Back", fg = '#f06eff', font = ("Arial", 8), width = 5, height = 1, command = log_out)
 logout_btn.place(x = 605, y = 475)
 

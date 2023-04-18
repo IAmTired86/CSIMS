@@ -2,8 +2,14 @@ from tkinter import *
 from tkinter import messagebox
 from db import clothes_database
 from clock import Clock
+from subprocess import call
+
 
 db = clothes_database('CSIMS.db')
+
+def log_out():
+    inv.destroy()
+    call(["python","admin.py"])
 
 def populate_list():
     clothes_list.delete(0, END)
@@ -110,8 +116,11 @@ update_btn.grid(row=3, column=2)
 clear_btn = Button(inv, text='Clear Input', width = 12, height=3, command=clear_text)
 clear_btn.grid(row=3, column=3)
 
+logout_btn = Button(inv, text = "Back", width = 5, height = 1, command = log_out)
+logout_btn.place(x = 880, y = 460)
+
 inv.title('Clothes Store Inventory Management')
-inv.geometry('950x480')
+inv.geometry('960x490')
 inv.configure(bg='#3D3D3D')
 
 clockLabel = Label(inv, font=('Haettenschweiler', 28, 'bold'), bg='#3D3D3D', fg='gold')

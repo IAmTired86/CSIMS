@@ -2,8 +2,13 @@ from tkinter import *
 from tkinter import messagebox
 from db import employees_database
 from clock import Clock
+from subprocess import call
 
 db = employees_database('CSIMS.db')
+
+def log_out():
+    emp.destroy()
+    call(["python","admin.py"])
 
 def populate_list():
     employees_list.delete(0, END)
@@ -109,6 +114,9 @@ update_btn.grid(row=3, column=2)
 
 clear_btn = Button(emp, text='Clear Input', width=12, height=3, command=clear_text)
 clear_btn.grid(row=3, column=3)
+
+logout_btn = Button(emp, text = "Back", width = 5, height = 1, command = log_out )
+logout_btn.place(x = 915, y = 465)
 
 emp.title('Clothes Store Employees Management')
 emp.geometry('1000x500')
